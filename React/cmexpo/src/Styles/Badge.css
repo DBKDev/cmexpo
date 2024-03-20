@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    /* border: 1px solid red; */
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+.positionbadge {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.BADGE-LOGO {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.BADGE-LOGO .qr_position {
+    position: absolute;
+    top: 50rem;
+    /* Ajustez la position verticale en fonction de l'image */
+    left: 325px;
+    /* Ajustez la position horizontale en fonction de l'image */
+    z-index: 1;
+}
