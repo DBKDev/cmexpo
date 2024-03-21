@@ -9,6 +9,7 @@
     outline: none;
     scroll-behavior: smooth;
     user-select: none;
+    /* border: 1px solid red; */
 }
 
 :root {
@@ -24,6 +25,8 @@
     gap: 150px;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    max-width: 500px;
 }
 
 .Infos-Badge p {

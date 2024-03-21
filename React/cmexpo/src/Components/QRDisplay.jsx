@@ -37,13 +37,22 @@ const QRDisplay = () => {
 
     let imageSource;
     if (catégorieinscri === 'Presse') {
-        imageSource = process.env.PUBLIC_URL + `/images/BADGEPRESS.png`;
+        imageSource = process.env.PUBLIC_URL + `/images/Presse.png`;
     } else if (catégorieinscri === 'VIP') {
-        imageSource = process.env.PUBLIC_URL + `/images/BADGEVIP.png`;
+        imageSource = process.env.PUBLIC_URL + `/images/VIP.png`;
     } else {
-        imageSource = process.env.PUBLIC_URL + `/images/BADGEVISITEUR.png`;
+        imageSource = process.env.PUBLIC_URL + `/images/Visiteur.png`;
     }
 
+
+    let qrPosition;
+    if (catégorieinscri === 'Presse') {
+        qrPosition = { top: '32rem', left: '210px' }; // Exemple de position pour la catégorie Presse
+    } else if (catégorieinscri === 'VIP') {
+        qrPosition = { top: '32rem', left: '200px' }; // Exemple de position pour la catégorie VIP
+    } else {
+        qrPosition = { top: '32rem', left: '215px' }; // Exemple de position pour la catégorie Visiteur
+    }
 
 
     return (
@@ -57,7 +66,7 @@ const QRDisplay = () => {
                 <div className='BADGE-LOGO'>
                     <img src={imageSource} alt='Badge'  />
                 
-                    <div className='qr_position'>
+                    <div className='qr_position' style={qrPosition}>
                         {qrCodeData && <QRCodePage qrCodeData={qrCodeData}  mailinscri={mailinscri} nominscri={nominscri} />}
                         {/* <QRCodePage mailinscri={mailinscri} /> */}
                     </div>
