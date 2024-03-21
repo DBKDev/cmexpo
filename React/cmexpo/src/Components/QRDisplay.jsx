@@ -66,22 +66,23 @@ const QRDisplay = () => {
 
     return (
         <>
-            <div className='Image-logo'>
+            <div className='Image-logo-badge'>
                 <img src={process.env.PUBLIC_URL + `/images/CMELOGO.svg`} alt='logo cmevenement' />
             </div>
-
+            <div className='Download-btn'>
+                <button onClick={downloadImage}>Télécharger mon Badge</button>
+            </div>
             <div className='positionbadge' ref={positionBadgeRef}>
                 <div className='BADGE-LOGO'>
                     <img src={imageSource} alt='Badge' />
-                
+
                     <div className='qr_position' style={qrPosition}>
-                        {qrCodeData && <QRCodePage qrCodeData={qrCodeData}  mailinscri={mailinscri} nominscri={nominscri} />}
+                        {qrCodeData && <QRCodePage qrCodeData={qrCodeData} mailinscri={mailinscri} nominscri={nominscri} />}
                     </div>
                 </div>
             </div>
 
-            {/* Bouton de téléchargement */}
-            <button onClick={downloadImage}>Télécharger</button>
+
         </>
     );
 };

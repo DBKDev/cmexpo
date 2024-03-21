@@ -12,6 +12,16 @@
     user-select: none;
 }
 
+.Image-logo-badge {
+    display: flex;
+    justify-content: center;
+}
+
+.Image-logo-badge img {
+    width: auto;
+    height: 120px;
+}
+
 .positionbadge {
     display: flex;
     justify-content: center;
@@ -24,6 +34,8 @@
     justify-content: center;
     flex-direction: column;
     position: relative;
+    width: 100%;
+    height: auto;
 }
 
 .BADGE-LOGO .qr_position {
@@ -33,4 +45,29 @@
     left: 240px;
     /* Ajustez la position horizontale en fonction de l'image */
     z-index: 1;
+}
+
+.Download-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.Download-btn button {
+    height: 50px;
+    width: 250px;
+    border-radius: 24px;
+    background-color: var(--rouge);
+    color: var(--blanc);
+    border: 0px;
+    font-size: 1.2rem;
+}
+
+.Download-btn button:hover {
+    color: var(--rouge);
+    background-color: var(--blanc);
+    border: 1px solid var(--rouge);
+    cursor: pointer;
 }
