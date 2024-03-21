@@ -1,15 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import QRCodePage from '../Views/QRCodePage'
+import React, { useEffect, useState, useRef } from 'react';
+import QRCodePage from '../Views/QRCodePage';
 import InscriptionService from '../Services/InscriptionService';
 import { useParams } from 'react-router-dom';
-import "../Styles/Badge.css"
+import html2canvas from 'html2canvas'; // Importez html2canvas
+import "../Styles/Badge.css";
 
 const QRDisplay = () => {
-    const { userId } = useParams(); // Récupérer l'ID de l'utilisateur depuis les paramètres d'URL
+    const { userId } = useParams();
     const [qrCodeData, setQrCodeData] = useState('');
     const [mailinscri, setMailinscri] = useState('');
     const [nominscri, setNominscri] = useState('');
     const [catégorieinscri, setCatégorieinscri] = useState('');
+    const positionBadgeRef = useRef(null); // Référence pour la div positionbadge
 
     const fetchQRCodeData = async () => {
         try {
@@ -34,6 +36,15 @@ const QRDisplay = () => {
         fetchQRCodeData();
     }, [userId]);
 
+    // Fonction pour télécharger l'image
+    const downloadImage = () => {
+        html2canvas(positionBadgeRef.current).then(canvas => {
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL();
+            link.download = 'badge.png';
+            link.click();
+        });
+    };
 
     let imageSource;
     if (catégorieinscri === 'Presse') {
@@ -44,7 +55,6 @@ const QRDisplay = () => {
         imageSource = process.env.PUBLIC_URL + `/images/Visiteur.png`;
     }
 
-
     let qrPosition;
     if (catégorieinscri === 'Presse') {
         qrPosition = { top: '32rem', left: '210px' }; // Exemple de position pour la catégorie Presse
@@ -54,26 +64,25 @@ const QRDisplay = () => {
         qrPosition = { top: '32rem', left: '215px' }; // Exemple de position pour la catégorie Visiteur
     }
 
-
     return (
         <>
             <div className='Image-logo'>
                 <img src={process.env.PUBLIC_URL + `/images/CMELOGO.svg`} alt='logo cmevenement' />
             </div>
 
-
-            <div className='positionbadge'>
+            <div className='positionbadge' ref={positionBadgeRef}>
                 <div className='BADGE-LOGO'>
-                    <img src={imageSource} alt='Badge'  />
+                    <img src={imageSource} alt='Badge' />
                 
                     <div className='qr_position' style={qrPosition}>
                         {qrCodeData && <QRCodePage qrCodeData={qrCodeData}  mailinscri={mailinscri} nominscri={nominscri} />}
-                        {/* <QRCodePage mailinscri={mailinscri} /> */}
                     </div>
                 </div>
             </div>
-        </>
 
+            {/* Bouton de téléchargement */}
+            <button onClick={downloadImage}>Télécharger</button>
+        </>
     );
 };
 
