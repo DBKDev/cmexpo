@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    outline: none;
+    scroll-behavior: smooth;
+    user-select: none;
+}
+
+:root {
+    --rouge: #E12734;
+    --blanc: #FFF;
+}
+
+
+
+.Infos-Badge {
+    display: flex;
+    flex-direction: column;
+    gap: 150px;
+    justify-content: center;
+    align-items: center;
+}
+
+.Infos-Badge p {
+    font-size: 3.2rem;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    color: #121212;
+    text-align: center;
+}

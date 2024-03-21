@@ -37,7 +37,10 @@ const addInscription = (inscription) => {
 
 const fetchQRListe = (id) => {
     return new Promise((resolve, reject) => {
-        const sql = `SELECT ID_I, Code_I FROM qrcode WHERE ID_I = ?`;
+        const sql = `SELECT i.Nom_I, i.Mail_I,i.Id_I ,i.Categorie_I, q.Id_I , q.Code_I
+                    from qrcode as q
+                    INNER JOIN inscription as i on q.Id_I = i.Id_I
+                    Where i.Id_I = ?;`;
         let query = conn.query(sql, [id], (err, result, field) => {
             if (err) return reject(err);
             resolve(result);

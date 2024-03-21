@@ -28,9 +28,9 @@
 
 .BADGE-LOGO .qr_position {
     position: absolute;
-    top: 50rem;
+    top: 32rem;
     /* Ajustez la position verticale en fonction de l'image */
-    left: 325px;
+    left: 230px;
     /* Ajustez la position horizontale en fonction de l'image */
     z-index: 1;
 }
