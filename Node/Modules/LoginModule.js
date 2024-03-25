@@ -6,11 +6,12 @@ const SECRET = "+CevHtq/x?B0gZz;&`h@k:3Zz7]TEOwMA7j}[Ot<W:qH3$<&!jqe40sc$Lp&#MV"
 
 
 
-router.post('/', (req,res) => {
+router.post('/login', (req,res) => {
     const user = req.body;
     if (user.email == undefined || user.password == undefined){
         res.json({"message" : "Veuillez-renseigner un email et un password"})
     }
+    
     loginService.login(user).then((result) => {
         const token = jwt.sign({
             user : result[0]

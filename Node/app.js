@@ -19,7 +19,7 @@ app.get('/', checkTokenMiddleware, (req, res) => {
 });
 
 
-app.use("/connexion", LoginModule);
+app.use("/connexion" ,LoginModule);
 app.use('/inscription', InscriptionModule);
 app.use('/scanner', ScannerModule);
 
