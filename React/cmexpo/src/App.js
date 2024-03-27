@@ -17,7 +17,7 @@ function App() {
     <Route path="/" element={<Accueil />} />
     <Route path="/inscription" element={<Inscription />} />
     <Route path="/qrcode/:userId" element={<QRCodePage />} />
-    <Route path="/auth/login" element={<AuthPage />} />
+    <Route path="/auth" element={<AuthPage />} />
     
   </Routes>
   </BrowserRouter>

@@ -53,8 +53,8 @@ const AuthPage = () => {
 
                         <div class="remember-forgot">
                             <div className='remember-forgot-coche'>
-                                <input type="checkbox" name="coche" />
-                                <label htmlFor="">Rester connecté</label>
+                                <input type="checkbox" name="coche" id='coche'/>
+                                <label for="coche" htmlFor="">Rester connecté</label>
                             </div>
                             <a href="#">Mot de passe oublié?</a>
                         </div>
