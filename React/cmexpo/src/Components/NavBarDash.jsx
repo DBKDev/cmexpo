@@ -26,16 +26,16 @@ const NavBarDash = () => {
                     <li>
                         <a href="#">
                             <i className='bx bx-grid-alt'></i>
-                            <span className="links_name">Dashboard</span>
+                            <span className="links_name">Statistiques</span>
                         </a>
-                        <span className="tooltip">Dashboard</span>
+                        <span className="tooltip">Statistiques</span>
                     </li>
                     <li>
                         <a href="#">
                             <i className='bx bx-qr-scan'></i>
                             <span className="links_name">Scan Code</span>
                         </a>
-                        <span className="tooltip">Messages</span>
+                        <span className="tooltip">Scan Code</span>
                     </li>
                     <li>
                         <a href="#">
@@ -50,13 +50,6 @@ const NavBarDash = () => {
                             <span className="links_name">Visiteurs</span>
                         </a>
                         <span className="tooltip">Visiteurs</span>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i className='bx bx-folder'></i>
-                            <span className="links_name">File Manager</span>
-                        </a>
-                        <span className="tooltip">Files</span>
                     </li>
                     <li className="profile">
                         <div className="profile-details">
