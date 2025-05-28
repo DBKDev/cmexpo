@@ -48,8 +48,19 @@ const fetchQRListe = (id) => {
     });
 }
 
+const addInscriptionExposant = (expoinscri) => {
+    return new Promise((resolve, reject) =>{
+        const sql = `INSERT INTO exposant (Nom_E, Mail_E, Mdp_E) VALUES (?,?,?)`;
+        conn.query(sql, [expoinscri.Nom, expoinscri.Mail, expoinscri.Mdp], (err, result, field) => {
+            if (err) return reject(err);
+            resolve(result);
+        })
+    })
+}
+
 
 module.exports = {
     addInscription,
-    fetchQRListe
+    fetchQRListe,
+    addInscriptionExposant
 }

@@ -24,5 +24,16 @@ router.get('/:id', (req, res) => {
     });
 });
 
+router.post('/', async (req, res) => {
+    let data = req.body;
+    InscriptionService.addInscriptionExposant(data).then((result) => {
+        res.status(201)
+        res.json(data)
+    }).catch((err) => {
+        console.log(err)
+        res.json({ "message": "Votre ajout ne s'est pas bien passé", data: err })
+    })
+});
+
 
 module.exports = router;

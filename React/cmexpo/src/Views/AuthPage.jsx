@@ -30,7 +30,7 @@ const AuthPage = () => {
             console.log(response.data); // Affiche les données de la réponse
 
             accountService.saveToken(response.data.access_token);
-            navigation("/auth/Qrscan");
+            navigation("/auth/Stats");
         } catch (error) {
             console.error("Erreur dans handleConn :", error);
         }

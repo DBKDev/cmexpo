@@ -24,21 +24,21 @@ const NavBarDash = () => {
                 </div>
                 <ul className="nav-list">
                     <li>
-                        <a href="#">
+                        <a href="/auth/Stats">
                             <i className='bx bx-grid-alt'></i>
                             <span className="links_name">Statistiques</span>
                         </a>
                         <span className="tooltip">Statistiques</span>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/auth/QRscan">
                             <i className='bx bx-qr-scan'></i>
                             <span className="links_name">Scan Code</span>
                         </a>
                         <span className="tooltip">Scan Code</span>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="/auth/Exposant">
                             <i className='bx bx-user'></i>
                             <span className="links_name">Exposants</span>
                         </a>
